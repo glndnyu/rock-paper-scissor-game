@@ -23,12 +23,16 @@ function playRound(playerSelection, computerSelection){
     alert("You both chose " + playerSelection + ". This round's a tie!");
     return tie;
   }
-  if (playerSelection == "Rock"){
-    alert("You win this round!");
-    return win;
-  } 
-  alert("You lost this round");
-  return lose;
+  switch (true){
+    case playerSelection == "Rock" && computerSelection == "Scissor":
+    case playerSelection == "Paper" && computerSelection == "Rock":
+    case playerSelection == "Scissor" && computerSelection == "Paper":
+      alert("You win this round! "+ playerSelection + " wins against "+computerSelection);
+      return win;
+    default:
+      alert("You lose this round! "+ computerSelection + " wins against "+playerSelection);
+      return lose;
+  }
 }
 
 function playGame(){
@@ -40,12 +44,14 @@ function playGame(){
     const computerSelection = getComputerChoice();
     const playerSelection = getPlayerChoice();
     const roundResult = playRound(playerSelection, computerSelection);
-    if (roundResult.includes("lose")) computerPoints++;
-    else if (roundResult.includes("win")) playerPoints++;
+    if (roundResult == "lose") computerPoints++;
+    else if (roundResult == "win") playerPoints++;
     round++;
   }
 
-  if(playerPoints == computerPoints) alert("It's a tie! Score is " + playerPoints + " & " + computerPoints);
-  else if (playerPoints > computerPoints) alert("You win! Score is " + playerPoints + " & " + computerPoints);
-  else alert("Computer wins! Score is " + playerPoints + " & " + computerPoints);
+  if(playerPoints == computerPoints) alert("It's a tie! Score is " + playerPoints + " & " + computerPoints + ".");
+  else if (playerPoints > computerPoints) alert("You win! Score is " + playerPoints + " & " + computerPoints +".");
+  else alert("Computer wins! Score is " + playerPoints + " & " + computerPoints +".");
 }
+
+playGame();
