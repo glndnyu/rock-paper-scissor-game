@@ -15,13 +15,12 @@ function getPlayerChoice(){
 }
 
 function playRound(playerSelection, computerSelection){
-  const win = "win";
-  const lose = "lose"
-  const tie = "tie";
+  const win = true;
+  const lose = false;
 
   if(playerSelection == computerSelection){
     alert("You both chose " + playerSelection + ". This round's a tie!");
-    return tie;
+    return;
   }
   switch (true){
     case playerSelection == "Rock" && computerSelection == "Scissor":
@@ -44,8 +43,8 @@ function playGame(){
     const computerSelection = getComputerChoice();
     const playerSelection = getPlayerChoice();
     const roundResult = playRound(playerSelection, computerSelection);
-    if (roundResult == "lose") computerPoints++;
-    else if (roundResult == "win") playerPoints++;
+    if (!roundResult && roundResult != undefined) computerPoints++;
+    else if (roundResult) playerPoints++;
     round++;
   }
 
