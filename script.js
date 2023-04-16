@@ -43,8 +43,8 @@ function playGame(){
     const computerSelection = getComputerChoice();
     const playerSelection = getPlayerChoice();
     const roundResult = playRound(playerSelection, computerSelection);
-    if (!roundResult && roundResult != undefined) computerPoints++;
-    else if (roundResult) playerPoints++;
+    if (roundResult) playerPoints++;
+    else if (!roundResult && roundResult != undefined) computerPoints++;
     round++;
   }
 
