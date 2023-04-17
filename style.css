@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+  height: 100vh;
+}
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 75%;
+  margin: auto;
+  background-color: rgba(154, 157, 157, 0.5);
+  border-radius: 10px;
+}
+
+.chosen-container {
+  height: 200px;
+  width: 75%;
+  margin: auto;
+  text-align: center;
+  height: fit-content;
+}
+
+.hand-and-score-container {
+  display: flex;
+  justify-content: space-around;
+  height: fit-content;
+}
+
+.hand-and-score-container img {
+  min-height: 120px;
+}
+
+#player, #computer {
+  height: 165px;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+img {
+  cursor: pointer;
+}
+
+img:hover {
+  width: 110%;
+}
+
+header {
+  margin: auto;
+  text-align: center;
+  font-family: Papyrus;
+  font-size: 50px;
+  background-color: rgb(220, 128, 8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
