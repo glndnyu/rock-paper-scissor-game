@@ -1,5 +1,4 @@
 # rock-paper-scissor-game
-3rd TOP project
+3rd TOP project - Revisited
 
-This is the third project in The Odin Project Foundations.
-It's the classic rock paper scissor game to be coded in javascript and to be played, for now, in the console.
+In this project, the main purpose was to use javascript to add a user interface for the game.
