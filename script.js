@@ -5,19 +5,20 @@ function getComputerChoice(){
   return choices[computerChoice];
 }
 
-function getPlayerChoice(){
-  const playerChoice = prompt("Rock Paper Scissor, pick your weapon!");
-  if(playerChoice.toLowerCase() == "rock") return choices[0];
-  if(playerChoice.toLowerCase() == "paper") return choices[1];
-  if(playerChoice.toLowerCase() == "scissor") return choices[2];
-  alert("Invalid Input");
-  return getPlayerChoice();
-}
+/*function getPlayerChoice(choice){
+  //const playerChoice = prompt("Rock Paper Scissor, pick your weapon!");
+  console.log(choice);
+  if(choice.textContent.toLowerCase() == "rock") return choices[0];
+  if(choice.textContent.toLowerCase() == "paper") return choices[1];
+  if(choice.textContent.toLowerCase() == "scissor") return choices[2];
+}*/
 
-function playRound(playerSelection, computerSelection){
+function playRound(event){
+  const playerSelection = event.target.textContent;
+  const computerSelection = getComputerChoice();
   const win = true;
   const lose = false;
-
+  console.log(computerSelection);
   if(playerSelection == computerSelection){
     alert("You both chose " + playerSelection + ". This round's a tie!");
     return;
@@ -34,11 +35,15 @@ function playRound(playerSelection, computerSelection){
   }
 }
 
-function playGame(){
+const buttons = document.querySelectorAll("button");
+buttons.forEach(button => {
+  button.addEventListener("click", playRound);
+});
+
+/*function playGame(){
   let playerPoints = 0;
   let computerPoints = 0;
   let round = 1;
-
   while (round <=5){
     const computerSelection = getComputerChoice();
     const playerSelection = getPlayerChoice();
@@ -53,4 +58,4 @@ function playGame(){
   else alert("Computer wins! Score is " + playerPoints + " & " + computerPoints +".");
 }
 
-playGame();
+playGame();*/
