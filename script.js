@@ -25,7 +25,6 @@ function playAnotherRound(){
 
 function checkWinner(){
   if(playerPoints == 5){ 
-    //alert("You win!");
     buttons.forEach(button => {
       button.removeEventListener("click", playRound);
     });
@@ -49,7 +48,6 @@ function playRound(event){
   playerImage.src = `images/${playerSelection}.png`;
   computerImage.src = `images/${computerSelection}.png`;
   if(playerSelection == computerSelection){
-    //alert("You both chose " + playerSelection + ". This round's a tie!");
     h2.textContent = "Round is a tie!";
     h4.textContent = `Both chose ${playerSelection}`;
     return;
@@ -58,19 +56,16 @@ function playRound(event){
     case playerSelection == "Rock" && computerSelection == "Scissor":
     case playerSelection == "Paper" && computerSelection == "Rock":
     case playerSelection == "Scissor" && computerSelection == "Paper":
-      //alert("You win this round! "+ playerSelection + " wins against "+computerSelection);
       h2.textContent = "You win this round!";
       h4.textContent = `${playerSelection} wins against ${computerSelection}`;
       playerScore.textContent = ++playerPoints
       break;
     default:
-      //alert("You lose this round! "+ computerSelection + " wins against "+playerSelection);
       h2.textContent = "You lose this round!";
       h4.textContent = `${playerSelection} loses against ${computerSelection}`;
       computerScore.textContent = ++computerPoints;
       break;
   }
-  console.log(`${playerPoints}, ${computerPoints}`);
   checkWinner();
 }
 
