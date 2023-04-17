@@ -4,12 +4,31 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
-  <title>Document</title>
+  <title>Jack-en-Poy</title>
 </head>
 <body>
-  <button>Rock</button>
-  <button>Paper</button>
-  <button>Scissor</button>
+  <header>~ ROCK PAPER SCISSOR ~</header>
+  <div class="chosen-container">
+    <h2></h2>
+    <h4></h4>
+    <div class="hand-and-score-container">
+      <div>
+        <img id="player" src="" alt="">
+        <h3>Player: <span id="playerScore"></span></h3>
+      </div>
+      <div>
+        <img id="computer" src="" alt="">
+        <h3>Computer: <span id="computerScore"></span></h3>
+      </div>
+    </div>
+  </div>
+  <div class="button-container">
+    <button><img src="images/rock.png" alt="Rock"></button>
+    <button><img src="images/paper.png" alt="Paper"></button>
+    <button><img src="images/scissor.png" alt="Scissor"></button>
+  </div>
+  <div class="score-container"></div>
 </body>
 </html>
